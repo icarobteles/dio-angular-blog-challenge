@@ -1,0 +1,20 @@
+:host {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 31px 30px 57px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+:host > *:not(router-outlet) {
+  width: 100%;
+  max-width: 1080px;
+}
+
+@media (min-width: 1240px) {
+  :host {
+    padding: 71px 30px 102px;
+  }
+}

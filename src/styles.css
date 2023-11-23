@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-color: #111111;
+  --border-color: #ffffff1a;
+  --title-color: #fcfcfc;
+  --text-color: #ffffff99;
+  --bg-logo-color: #333333;
+  --shadow-color: #00000026;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Patrick Hand", cursive;
+  font-style: normal;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+button {
+  cursor: pointer;
+  color: inherit;
+  background: none;
+  text-decoration: none;
+}
+
+button,
+hr,
+input,
+select,
+textarea {
+  outline: none;
+  border: none;
+}
+
+i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

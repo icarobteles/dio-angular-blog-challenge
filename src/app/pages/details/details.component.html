@@ -1,0 +1,16 @@
+<div class="post">
+  <p class="post--stats">
+    {{ post?.tag | uppercase }}
+    <span class="post--circle"></span>
+    {{ post?.postedAt| date }}
+  </p>
+  <h2 class="post--title">{{post?.title}}</h2>
+  <div class="post--author">
+    <h4>{{post?.author?.name}}</h4>
+    <h5>{{post?.author?.office}}</h5>
+  </div>
+  <img class="post--image" [src]="post?.imageUrl" [alt]="post?.title" >
+  <article class="post--content">
+    <p class="post--paragraph" *ngFor="let paragraph of post?.content">{{paragraph}}</p>
+  </article>
+</div>

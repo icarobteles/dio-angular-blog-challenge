@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <h3 class="summary" *ngIf="!!searchBy && posts.length > 0">
+    Exibindo resultados para: {{ searchBy }}
+  </h3>
+  <ul class="posts">
+    <ng-container *ngIf="posts.length > 0; else emptyResults">
+      <li class="posts--item" *ngFor="let post of posts">
+        <a [routerLink]="['/posts/', post.slug]">
+          <img class="posts--image" [src]="post.imageUrl" [alt]="post.title" />
+          <div class="posts--content">
+            <p class="posts--stats">
+              {{ post.tag | uppercase }}
+              <span class="posts--circle"></span>
+              {{ post.postedAt | date }}
+            </p>
+            <h3 class="posts--title">{{ post.title }}</h3>
+            <p class="posts--description">{{ post.description }}</p>
+            <div class="posts--author">
+              <h4>{{ post.author.name }}</h4>
+              <h5>{{ post.author.office }}</h5>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ng-container>
+
+    <ng-template #emptyResults>
+      <li class="posts--empty">
+        <h2 class="posts--empty--title">Oops! 😓</h2>
+        <p class="posts--empty--text">
+          Não encontramos nenhuma postagem com a palavra-chave
+          <strong>{{ searchBy }}</strong>. 
+          Por favor, tente outra palavra-chave.
+        </p>
+      </li>
+    </ng-template>
+  </ul>
+</div>
